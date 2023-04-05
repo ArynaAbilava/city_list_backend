@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+  <changeSet author="Aryna Abilava" id="V2">
+    <loadUpdateData file="../cities.csv"
+      primaryKey="id"
+      separator=","
+      relativeToChangelogFile="true"
+      tableName="city">
+      <column header="id" name="id" type="SKIP"/>
+      <column header="name" name="name" type="VARCHAR"/>
+      <column header="photo" name="image_url" type="VARCHAR"/>
+    </loadUpdateData>
+  </changeSet>
+</databaseChangeLog>

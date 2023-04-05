@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: city-list
+
+  # DB source config
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ENVIRONMENT_OVERRIDE
+    username: ENVIRONMENT_OVERRIDE
+    password: ENVIRONMENT_OVERRIDE
+
+  # JPA config
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # Liquibase migration config
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+
+# Logging config
+logging:
+  level:
+    com.abilava: DEBUG
+    org.hibernate.SQL: DEBUG
+
+# Default error config
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
+    include-exception: false
